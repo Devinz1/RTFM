@@ -1,3 +1,8 @@
-var app = angular.module('rtfmApp')
+var app = angular.module('rtfmApp').controller('loginController', function($scope, EnvironmentService) {
 
-	app.controller('loginController', function ($scope) {}
+ EnvironmentService.getEnv().then(function(response){
+ 	$scope.env = response.data;
+ })
+
+});
+
